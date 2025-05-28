@@ -23,6 +23,8 @@ reglas, hipótesis. Codificar el conocimiento en bases de hechos y reglas en Pro
 - Implementar reglas que permitan al agente eliminar hipótesis inválidas en cada turno.
 - Inferir el código oculto utilizando lógica de restricciones.
 
+---
+
 ## Lógica Implementada
 
 Ambos agentes representan su conocimiento en forma de hechos y reglas. A través de deducción lógica, van reduciendo el espacio de búsqueda y actualizando su base de conocimiento hasta llegar a la solución correcta. 
