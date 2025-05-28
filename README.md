@@ -1,61 +1,43 @@
 # Descripcion del problema
 
-# 🧠 Agente Lógico para Clue (Cluedo) y Mastermind
-
-Este proyecto implementa agentes lógicos que resuelven los juegos **Clue (Cluedo)** y **Mastermind** utilizando **lógica proposicional** y **lógica de restricciones**. El objetivo es demostrar cómo un agente puede representar conocimiento parcial e **inferir progresivamente** la solución a partir de información incompleta.
-
----
-
-## 🎲 Juego 1: Clue (Cluedo)
-
-### 🧩 Descripción
-
-En Clue, el objetivo es deducir:
-- **Quién** cometió el crimen
-- **Con qué arma**
-- **En qué habitación**
-
-A partir de cartas distribuidas entre jugadores y un conjunto oculto en el sobre del crimen, el agente usa deducciones lógicas para encontrar la solución correcta.
-
-### ✅ Funcionalidades
-
-- 🕵️ Modelado de **sospechosos**, **armas** y **habitaciones** como símbolos lógicos.
-- 🧠 Representación de cartas **conocidas**, **desconocidas** y **sospechosas**.
-- 🔍 Simulación de deducciones por **eliminación lógica**.
-- 🧾 Base de conocimiento con `And`, `Or`, `Not`, y validación con `model_check`.
-- 📜 Inferencia sobre qué elementos **están en el sobre**, usando solo la información visible de los jugadores.
+Representar los elementos básicos de cada juego en lógica de primer orden: objetos, 
+reglas, hipótesis. Codificar el conocimiento en bases de hechos y reglas en Prolog. Usar técnicas de inferencia lógica y lógica de primer orden para deducir la solución.
 
 ---
 
-## 🎯 Juego 2: Mastermind
+## Juego 1: Clue
 
-### 🧩 Descripción
+### Descripción
 
-En Mastermind, el objetivo es deducir el **código secreto de colores** (ordenado) usando información sobre cuántos colores están correctos y en la posición correcta (pines negros), o en la posición incorrecta (pines blancos).
+- Modelar los posibles sospechosos, armas y habitaciones.
+- Representar las cartas de los jugadores y las posibles combinaciones.
+- Simular un agente que infiera quién, con qué arma y en qué lugar se cometió el crimen.
+- Resolver el caso a través de eliminación lógica basada en lo que tienen y no tienen los jugadores.
 
-### ✅ Funcionalidades
+## Juego 2: Mastermind
 
-- 🎨 Representación de combinaciones de colores como listas.
-- ⚙️ Simulación de retroalimentación con **pines negros** (posición y color correctos) y **pines blancos** (solo color correcto).
-- 🔁 Eliminación progresiva de hipótesis inválidas en cada intento.
-- 🧠 Inferencia del código oculto mediante **restricciones lógicas** en Prolog.
-- 📋 Predicados clave:
-  - `feedback/4`: compara dos códigos y genera retroalimentación.
-  - `negros/5`: calcula cantidad de colores correctos en posición correcta.
-  - `blancos/3`: determina colores correctos en posición incorrecta.
+### Descripción
 
----
+- Representar códigos secretos como combinaciones de colores.
+- Simular la lógica de retroalimentación (pines blancos y negros).
+- Implementar reglas que permitan al agente eliminar hipótesis inválidas en cada turno.
+- Inferir el código oculto utilizando lógica de restricciones.
 
-## 💡 Lógica Implementada
+## Lógica Implementada
 
-Ambos agentes representan su conocimiento en forma de **hechos y reglas**. A través de deducción lógica, van reduciendo el espacio de búsqueda y actualizando su base de conocimiento hasta llegar a la solución correcta. 
-
-Se demuestra cómo, a través de la lógica de primer orden y restricciones, un agente puede resolver juegos complejos con **información parcial**.
+Ambos agentes representan su conocimiento en forma de hechos y reglas. A través de deducción lógica, van reduciendo el espacio de búsqueda y actualizando su base de conocimiento hasta llegar a la solución correcta. 
 
 ---
 
-## 🧪 Ejecución
+## Ejecución
 
-Estos proyectos están implementados en **Prolog** (para deducción lógica) y opcionalmente combinados con lógica simbólica en Python para Clue (si se desea extender con herramientas como `logic.py`).
+Para Clue, usar solution solucion(C, T, R) y para Mastermind posible_codigo(C), feedback([rojo, azul, verde, amarillo], C, 2, 0).
 
 ---
+
+## Concluciones
+
+Nos ayudo a entender otra forma de ver la programación, ya que estos metodos de inferencia son muy utililes en distintos escenarios para hacer predicciones.
+
+
+
